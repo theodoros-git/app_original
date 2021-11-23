@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Development languages
+  ++ Ruby 3.0.2
+  ++ Rails 6.1.4.1
+  
+# Employmemnt Term Technology
 
-Things you may want to cover:
+  ++ Fonction de liste to do pour ajouter les produits 
+  ++ Fonction de commenter les produits.
+  
+# Technologies outside the curriculum
 
-* Ruby version
+  ++ Payment passerelle (kkiapay)
+#  Execution Procedure
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  $ git clone git@github.com:theodoros-git/app_original.git
+  $ cd Application-Originale
+  $ bundle install
+  $ rails db:create
+  $ rails db:migrate
+  $ rails db:seed
+  $ rails s
