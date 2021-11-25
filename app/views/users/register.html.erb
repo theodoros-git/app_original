@@ -1,0 +1,210 @@
+<% content_for :title do %>
+  Inscription-Clients |
+<% end %>
+
+<% content_for :stylesheets do %>
+  <style>
+    
+        @media only screen and (max-width: 800px) {
+            #nos {
+                display: none;
+            }
+        }
+        span{
+            color: #229ddc;
+        }
+        select {
+            height: 38px;
+            font-size: .9rem;
+            padding: 2px 5px;
+            border-radius: 2px;
+        }
+    </style>
+<% end %>
+
+<% content_for :content do %>
+<div class="container-fluid mt-52 mb-12">
+
+    <div class="row">
+
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+
+            <div class="card ">
+
+                <div class="card-header text-center" style="font-weight: bolder; font-size: 20px; color: #1a2649;">
+                Je m'inscris à E-local-products</div>
+
+                <div class="card-body">
+                    
+                    <form action="" method="POST" 
+                    class="text-center border border-light mt-10" >
+                    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+                        <div class="row mb-4">
+
+                                <div class="col" style="text-align: left;">
+
+                                    <label class="form-label" for="nom">Noms</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <input type="text" id="nom" name="customer_register[nom]" class="form-control " value="" />
+
+                                </div>
+
+                                <div class="col" style="text-align: left;">
+                                    
+                                    <label class="form-label" for="prenom">Prénoms</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+                                    
+                                    <input type="text" id="prenom" name="customer_register[prenom]" class="form-control " value="" />
+
+                                </div>
+
+                        </div>
+
+
+                        <div class="row mb-4">
+
+                                <div class="col" style="text-align: left;">
+                                    
+                                    <label class="form-label" for="address">Adresse / Lieu d'habitation</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <input type="text" id="address" name="customer_register[address]" class="form-control " value="" /> 
+                                    
+                                </div>
+
+                                <div class="col" style="text-align: left;">
+                                
+                                    <label class="form-label" for="ville">Ville</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <select class="custom-select custom-select-md" id="ville" name="customer_register[ville]">
+                                      <option value="hospital">Hôpital</option>
+                                      <option value="pharmacie">Pharmacie</option>
+                                      <option value="assureur">Assureur</option>
+                                      <option value="souscripteur">Souscripteur</option>
+                                      <option value="assure">Assuré</option>
+                                    </select>
+
+                                                                   
+                                </div>
+
+                        </div>
+
+                        
+
+
+
+                        <div class="row mb-4">
+
+                                <div class="col" style="text-align: left;">
+                                    
+                                    <label class="form-label" for="profession">Profession</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <input type="text" id="profession" name="customer_register[profession]" class="form-control " value="" />
+
+                                    
+                                    
+                                </div>
+
+                                <div class="col" style="text-align: left;">
+                                    
+                                    <label class="form-label" for="phone">Téléphone (pour identification)</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <input type="number" id="phone" name="customer_register[phone]" class="form-control " value="" />
+
+                                    
+                                    
+                                </div>
+
+                        </div>
+
+                        <div class="row mb-4">
+
+                                <div class="col" style="text-align: left;">
+                                    
+                                    <label class="form-label" for="customer_card">Uploader la photo de votre carte d'identité</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <input type="file" id="customer_card" name="customer_register[customer_card]" class="form-control " value="" />
+                                </div>
+  
+                        </div>
+
+                        <div class="row mb-4">
+
+                                <div class="col" style="text-align: left;">
+                                    
+                                    <label class="form-label" for="password">Mot de passe</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <input type="password" id="password" name="customer_register[password]" class="form-control" value="" />
+
+                                </div>
+
+                                <div class="col" style="text-align: left;">
+                                    
+                                    <label class="form-label" for="confirm_password">Confirmer le mot de passe</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <input type="password" id="confirm_password" name="customer_register[confirm_password]" class="form-control "  />
+
+                                </div>
+
+                        </div>
+
+                        <div class="form-check d-flex justify-content-center mb-4">
+                            <input
+                              class="form-check-input me-2"
+                              type="checkbox"
+                              value=""
+                              id="terms_conditions"
+                              checked
+                              name="customer_register[terms_conditions]"
+                            />
+                            <label class="form-check-label" for="terms_conditions">
+                              J'accepte les conditions d'utilisations
+                            </label>
+                        </div>
+
+
+                        <button class="btn btn-info my-4 "  
+                            type="submit">S'inscrire</button>
+
+                    </form>
+                    
+
+                    
+                </div>
+
+                <div class="card-footer text-muted text-center">
+
+                    <p style="color: #1a2649;">Si vous êtes déjà inscrit,  
+                        <a href="<%= customers_login_path %>" style="color: #229ddc;"
+                         class="me-4 ">Cliquez ici</a></p>
+               
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4"></div>
+
+    </div>
+
+</div>
+<% end %>

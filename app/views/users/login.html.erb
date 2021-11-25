@@ -1,0 +1,98 @@
+<% content_for :title do %>
+  Connexion-Clients |
+<% end %>
+
+<% content_for :stylesheets do %>
+  <style>
+    
+        @media only screen and (max-width: 800px) {
+            #nos {
+                display: none;
+            }
+        }
+        span{
+            color: #229ddc;
+        }
+        select {
+            height: 38px;
+            font-size: .9rem;
+            padding: 2px 5px;
+            border-radius: 2px;
+        }
+    </style>
+<% end %>
+
+<% content_for :content do %>
+<div class="container-fluid mt-52 mb-12">
+
+    <div class="row">
+
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+
+            <div class="card ">
+
+                <div class="card-header text-center" style="font-weight: bolder; font-size: 20px; color: #1a2649;">
+                Je me connecte à mon compte E-local-products</div>
+
+                <div class="card-body">
+                   
+                    <form action="" method="POST" 
+                    class="text-center border border-light " >
+                    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+                        
+                    
+                        <div class="row mb-4">
+
+                                    <div class="col" style="text-align: left;">
+                                        
+                                        <label class="form-label" for="phone">Entrez votre numéro de téléphone</label>
+
+                                        <div style="margin-bottom: 10px;"></div>
+
+                                        <input type="number" id="phone" name="login[phone]" class="form-control " value="" />
+                                        
+                                    </div>
+      
+                        </div>
+
+                        <div class="row mb-4">
+
+                                <div class="col" style="text-align: left;">
+                                    
+                                    <label class="form-label" for="password">Entrez votre mot de passe</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <input type="password" id="password" name="login[password]" class="form-control " value="" />
+                                    
+                                </div>
+      
+                        </div>
+
+                        <button class="btn btn-info my-4 "  
+                            type="submit">Se connecter</button>
+
+                    </form>
+                        
+                </div>
+
+                <div class="card-footer text-muted text-center">
+                    <p style="color: #1a2649;">Si vous n'êtes pas encore inscrit,  
+                        <a href="<%= customers_register_path %>" style="color: #229ddc;"
+                         class="me-4 ">Cliquez ici</a></p>
+                    
+               
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4"></div>
+
+    </div>
+
+</div>
+<% end %>

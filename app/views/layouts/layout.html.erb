@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield :title %> E-Local-Products</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= render "layouts/components/css" %>
+    <%= yield :stylesheets %>
+  </head>
+
+  <body>
+    <%= render "layouts/components/header" %>
+
+    <%= yield :content %>
+
+    <%= render "layouts/components/footer" %>
+
+    <%= render "layouts/components/js" %>
+
+    <%= yield :javascripts %>
+  </body>
+</html>
