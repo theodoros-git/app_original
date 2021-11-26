@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Connexion-Clients |
+  Connexion-Admins |
 <% end %>
 
 <% content_for :stylesheets do %>
@@ -45,17 +45,17 @@
             <div class="card ">
 
                 <div class="card-header text-center" style="font-weight: bolder; font-size: 20px; color: #1a2649;">
-                Je me connecte à mon compte E-local-products</div>
+                Connexion | Admin | E-local-products</div>
 
                 <div class="card-body">
-                    <% if flash[:user_create] %>
-                      <p class="alert alert-success"> <%= flash[:user_create] %></p>
+                    <% if flash[:admin_success] %>
+                      <p class="alert alert-success"> <%= flash[:admin_success] %></p>
                     <%end%>
                     <% if flash[:login_error] %>
                       <p class="alert alert-danger"> <%= flash[:login_error] %></p>
                     <%end%>
                    
-                    <form action="<%= customers_login_form_path %>" method="POST" 
+                    <form action="<%= admin_login_form_path %>" method="POST" 
                     class="text-center border border-light " >
                     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
                         

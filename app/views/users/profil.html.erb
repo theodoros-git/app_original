@@ -1,0 +1,78 @@
+<% content_for :title do %>
+  Profil 
+<% end %>
+
+
+<% content_for :content do %>
+<div class="row mt-40">
+  <div class="col-md-2"></div>
+    <div class="col-lg-9 col-md-9 ml-9">
+        <div class="card ">
+            <div class="card-header mb-4 d-flex justify-content-between">
+                <h4 class="card-title align-self-center">Informations sur l'utilisateur </h4>
+                
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table tablesorter " id="datatable" cellspacing="0" width="100%">
+                        <thead class=" text-primary">
+                            <tr>
+                                <th>
+                                    Nom & Prénoms
+                                </th>
+                                <th>
+                                    Numéro de téléphone
+                                </th>
+                                <th>
+                                    Adresses / Lieu d'habitation
+                                </th>
+                                <th>
+                                    Ville
+                                </th>
+
+                                <th>
+                                    Profession
+                                </th>
+                                
+                                <th>
+                                    Date de création du compte
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>
+                                    <%= @customer.fullname %>
+                                </td>
+                                <td>
+                                    <%= @customer.phone %>
+                                    
+                                </td>
+                                <td>
+                                    <%= @customer.address %>
+                                </td>
+                                <td>
+                                  <%= @customer.ville %>
+                                </td>
+                                
+
+                                <td >
+                                    <%= @customer.profession %>
+                                </td>
+                                <td >
+                                    <%= @customer.created_at %>
+                                </td>
+
+                                
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>

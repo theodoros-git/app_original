@@ -1,0 +1,81 @@
+<% content_for :title do %>
+  Ajouter un produit - Étape 2
+<% end %>
+
+
+<% content_for :content do %>
+<div class="container-fluid">
+    <div class="row">
+        
+    </div>
+    <div class="row mt-24">
+        <div class="col-md-6">
+            
+        </div>
+
+        <div class="col-md-1">
+
+            <div class="card">
+                <div class="card-header text-info text-center" style="font-weight: bolder; font-size: 25px; background-color: whitesmoke; border-radius:  solid 5px;">
+                    2
+                </div>                
+            </div>           
+        </div>
+    </div>
+
+
+    <div class="row mt-16">
+
+        <div class="col-md-4">
+            
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="card">
+
+                <div class="card-header text-info" style="font-weight: bolder; font-size: 18px; background-color: whitesmoke; border-radius:  solid 5px;">
+                    Détails | Produit
+                </div>
+                <div class="card-body">
+
+                    <form action="" method="POST">
+                        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+
+                        <div class="row mb-4">
+                            <div class="col" style="text-align: left;">
+                                
+                                <label class="form-label" for="product_file">Ajouter des images du produit</label>
+
+                                <div style="margin-bottom: 10px;"></div>
+
+                                <input type="file" id="product_file" name="product_two[product_file]" class="form-control " value="" multiple />
+                               
+                            </div>
+  
+                        </div>
+
+                        <div class="row mt-8">
+                           
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-info">Suivant</button>                            
+                            </div>
+                        </div>
+                        
+                    </form>
+                    
+                </div>
+                
+                <div class="card-footer text-center">
+                    Ajouter un produit | E-local-products
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+    </div>
+    
+</div>
+<% end %>

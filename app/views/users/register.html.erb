@@ -37,8 +37,21 @@
                 Je m'inscris à E-local-products</div>
 
                 <div class="card-body">
+
+                    <% if flash[:user_exist] %>
+                      <p class="alert alert-danger"> <%= flash[:user_exist] %></p>
+                    <%end%>
+                    <% if flash[:user_password] %>
+                      <p class="alert alert-danger"> <%= flash[:user_password] %></p>
+                    <%end%>
+                    <% if flash[:user_phone] %>
+                      <p class="alert alert-danger"> <%= flash[:user_phone] %></p>
+                    <%end%>
+                    <% if flash[:user_phone_len] %>
+                      <p class="alert alert-danger"> <%= flash[:user_phone_len] %></p>
+                    <%end%>
                     
-                    <form action="" method="POST" 
+                    <form action="<%= customers_register_form_path %>" method="POST" 
                     class="text-center border border-light mt-10" >
                     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
                         <div class="row mb-4">
@@ -49,7 +62,7 @@
 
                                     <div style="margin-bottom: 10px;"></div>
 
-                                    <input type="text" id="nom" name="customer_register[nom]" class="form-control " value="" />
+                                    <input type="text" id="nom" name="customer_register[nom]" class="form-control " value="" required />
 
                                 </div>
 
@@ -59,7 +72,7 @@
 
                                     <div style="margin-bottom: 10px;"></div>
                                     
-                                    <input type="text" id="prenom" name="customer_register[prenom]" class="form-control " value="" />
+                                    <input type="text" id="prenom" name="customer_register[prenom]" class="form-control " value="" required/>
 
                                 </div>
 
@@ -74,7 +87,7 @@
 
                                     <div style="margin-bottom: 10px;"></div>
 
-                                    <input type="text" id="address" name="customer_register[address]" class="form-control " value="" /> 
+                                    <input type="text" id="address" name="customer_register[address]" class="form-control " value="" required/> 
                                     
                                 </div>
 
@@ -84,7 +97,7 @@
 
                                     <div style="margin-bottom: 10px;"></div>
 
-                                    <select class="custom-select custom-select-md" id="ville" name="customer_register[ville]">
+                                    <select class="custom-select custom-select-md" id="ville" name="customer_register[ville]" >
                                       <option value="hospital">Hôpital</option>
                                       <option value="pharmacie">Pharmacie</option>
                                       <option value="assureur">Assureur</option>
@@ -109,7 +122,7 @@
 
                                     <div style="margin-bottom: 10px;"></div>
 
-                                    <input type="text" id="profession" name="customer_register[profession]" class="form-control " value="" />
+                                    <input type="text" id="profession" name="customer_register[profession]" class="form-control " value="" required/>
 
                                     
                                     
@@ -121,25 +134,12 @@
 
                                     <div style="margin-bottom: 10px;"></div>
 
-                                    <input type="number" id="phone" name="customer_register[phone]" class="form-control " value="" />
+                                    <input type="number" id="phone" name="customer_register[phone]" class="form-control " value="" required minlength="8" maxlength="8"/>
 
                                     
                                     
                                 </div>
 
-                        </div>
-
-                        <div class="row mb-4">
-
-                                <div class="col" style="text-align: left;">
-                                    
-                                    <label class="form-label" for="customer_card">Uploader la photo de votre carte d'identité</label>
-
-                                    <div style="margin-bottom: 10px;"></div>
-
-                                    <input type="file" id="customer_card" name="customer_register[customer_card]" class="form-control " value="" />
-                                </div>
-  
                         </div>
 
                         <div class="row mb-4">
@@ -150,7 +150,7 @@
 
                                     <div style="margin-bottom: 10px;"></div>
 
-                                    <input type="password" id="password" name="customer_register[password]" class="form-control" value="" />
+                                    <input type="password" id="password" name="customer_register[password]" class="form-control" value="" required/>
 
                                 </div>
 
@@ -160,7 +160,7 @@
 
                                     <div style="margin-bottom: 10px;"></div>
 
-                                    <input type="password" id="confirm_password" name="customer_register[confirm_password]" class="form-control "  />
+                                    <input type="password" id="confirm_password" name="customer_register[confirm_password]" class="form-control "  required  />
 
                                 </div>
 
@@ -170,10 +170,11 @@
                             <input
                               class="form-check-input me-2"
                               type="checkbox"
-                              value=""
+                              value="accepted"
                               id="terms_conditions"
                               checked
                               name="customer_register[terms_conditions]"
+                              required
                             />
                             <label class="form-check-label" for="terms_conditions">
                               J'accepte les conditions d'utilisations

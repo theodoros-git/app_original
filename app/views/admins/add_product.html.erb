@@ -1,0 +1,145 @@
+<% content_for :title do %>
+  Ajouter un produit
+<% end %>
+
+
+<% content_for :content do %>
+<div class="container-fluid">
+    <div class="row">
+        
+    </div>
+    <div class="row mt-24">
+        <div class="col-md-6">
+            
+        </div>
+
+        <div class="col-md-1">
+
+            <div class="card">
+                <div class="card-header text-info text-center" style="font-weight: bolder; font-size: 25px; background-color: whitesmoke; border-radius:  solid 5px;">
+                    1
+                </div>                
+            </div>           
+        </div>
+    </div>
+
+
+    <div class="row mt-16">
+
+        <div class="col-md-4">
+            
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="card">
+
+                <div class="card-header text-info" style="font-weight: bolder; font-size: 18px; background-color: whitesmoke; border-radius:  solid 5px;">
+                    Détails | Produit
+                </div>
+                <div class="card-body">
+
+                    <form action="<%= admin_add_product_form_path %>" method="POST">
+                        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+
+                        <div class="row mb-4">
+                            <div class="col" style="text-align: left;">
+                                
+                                <label class="form-label" for="product_name">Désignation du produit</label>
+
+                                <div style="margin-bottom: 10px;"></div>
+
+                                <input type="text" id="product_name" name="product[product_name]" class="form-control " value="" />
+                              
+                            </div>
+      
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col" style="text-align: left;">
+                                
+                                <label class="form-label" for="product_min_price">Montant minimum</label>
+
+                                <div style="margin-bottom: 10px;"></div>
+
+                                <input type="number" id="product_min_price" name="product[product_min_price]" class="form-control " value="" />
+
+                                                               
+                            </div>
+
+                            <div class="col" style="text-align: left;">
+                                
+                                <label class="form-label" for="product_max_price">Montant maximum</label>
+
+                                <div style="margin-bottom: 10px;"></div>
+
+                                <input type="number" id="product_max_price" name="product[product_max_price]" class="form-control " value="" />
+
+                                                               
+                            </div>
+      
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col" style="text-align: left;">
+                                
+                                <label class="form-label" for="product_min_quan">Quantité minimum</label>
+
+                                <div style="margin-bottom: 10px;"></div>
+
+                                <input type="number" id="product_min_quan" name="product[product_min_quan]" class="form-control " value="" />
+
+                                                               
+                            </div>
+
+                            <div class="col" style="text-align: left;">
+                                
+                                <label class="form-label" for="product_max_quan">Quantité maximum</label>
+
+                                <div style="margin-bottom: 10px;"></div>
+
+                                <input type="number" id="product_max_quan" name="product[product_max_quan]" class="form-control " value="" />
+
+                                                               
+                            </div>
+      
+                        </div>
+
+
+                        <div class="row mb-4">
+                            <div class="col" style="text-align: left;">
+                                
+                                <label class="form-label" for="product_desc">Description du produit</label>
+
+                                <div style="margin-bottom: 10px;"></div>
+
+                                <textarea  id="product_desc" name="product[product_desc]" class="form-control " value="" ></textarea>
+
+                                                               
+                            </div>
+      
+                        </div>
+                        <div class="row mt-8">
+                           
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-info">Suivant</button>                            
+                            </div>
+                        </div>
+                        
+                    </form>
+                    
+                </div>
+                
+                <div class="card-footer text-center">
+                    Ajouter un produit | E-local-products
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+    </div>
+    
+</div>
+<% end %>

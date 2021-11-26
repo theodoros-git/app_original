@@ -1,0 +1,95 @@
+<% content_for :title do %>
+  Inscription-Admins-Confirmation |
+<% end %>
+
+<% content_for :stylesheets do %>
+  <style>
+    
+        @media only screen and (max-width: 800px) {
+            #nos {
+                display: none;
+            }
+        }
+        span{
+            color: #229ddc;
+        }
+        select {
+            height: 38px;
+            font-size: .9rem;
+            padding: 2px 5px;
+            border-radius: 2px;
+        }
+    </style>
+<% end %>
+
+<% content_for :content do %>
+<div class="container-fluid mt-52 mb-12">
+
+    <div class="row">
+
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+
+            <div class="card ">
+
+                <div class="card-header text-center" style="font-weight: bolder; font-size: 20px; color: #1a2649;">
+                Compte Administrateur | E-local-products | Confirmation</div>
+
+                <div class="card-body">
+
+                    <% if flash[:admin_confirmation] %>
+                      <p class="alert alert-info"> <%= flash[:admin_confirmation] %></p>
+                    <%end%>
+                    <% if flash[:admin_error] %>
+                      <p class="alert alert-danger"> <%= flash[:admin_error] %></p>
+                    <%end%>
+                    
+                    <form action="<%= admin_register_confirm_form_path %>" method="POST" 
+                    class="text-center border border-light mt-10" >
+                    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+
+                        <div class="row mb-4">  
+
+                            <div class="col" style="text-align: left;">
+                                
+                                <label class="form-label" for="code_secret">Code confidentiel</label>
+
+                                <div style="margin-bottom: 10px;"></div>
+
+                                <input type="password" id="code_secret" name="admin_c[code_secret]" class="form-control " value="" required />
+
+                                
+                                
+                            </div>
+
+                        </div>
+
+
+                        <button class="btn btn-info my-4 "  
+                            type="submit">S'inscrire</button>
+
+                    </form>
+                    
+
+                    
+                </div>
+
+                <div class="card-footer text-muted text-center">
+
+                    <p style="color: #1a2649;">Si vous êtes déjà inscrit,  
+                        <a href="<%= customers_login_path %>" style="color: #229ddc;"
+                         class="me-4 ">Cliquez ici</a></p>
+               
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4"></div>
+
+    </div>
+
+</div>
+<% end %>

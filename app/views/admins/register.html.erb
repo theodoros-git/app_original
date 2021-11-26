@@ -1,0 +1,148 @@
+<% content_for :title do %>
+  Inscription-Admins |
+<% end %>
+
+<% content_for :stylesheets do %>
+  <style>
+    
+        @media only screen and (max-width: 800px) {
+            #nos {
+                display: none;
+            }
+        }
+        span{
+            color: #229ddc;
+        }
+        select {
+            height: 38px;
+            font-size: .9rem;
+            padding: 2px 5px;
+            border-radius: 2px;
+        }
+    </style>
+<% end %>
+
+<% content_for :content do %>
+<div class="container-fluid mt-52 mb-12">
+
+    <div class="row">
+
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+
+            <div class="card ">
+
+                <div class="card-header text-center" style="font-weight: bolder; font-size: 20px; color: #1a2649;">
+                Compte Administrateur | E-local-products</div>
+
+                <div class="card-body">
+
+                    <% if flash[:user_exist] %>
+                      <p class="alert alert-danger"> <%= flash[:user_exist] %></p>
+                    <%end%>
+                    <% if flash[:user_password] %>
+                      <p class="alert alert-danger"> <%= flash[:user_password] %></p>
+                    <%end%>
+                    <% if flash[:user_phone] %>
+                      <p class="alert alert-danger"> <%= flash[:user_phone] %></p>
+                    <%end%>
+                    <% if flash[:user_phone_len] %>
+                      <p class="alert alert-danger"> <%= flash[:user_phone_len] %></p>
+                    <%end%>
+                    
+                    <form action="<%= admin_register_form_path %>" method="POST" 
+                    class="text-center border border-light mt-10" >
+                    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+                        <div class="row mb-4">
+
+                                <div class="col" style="text-align: left;">
+
+                                    <label class="form-label" for="nom">Noms</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <input type="text" id="nom" name="admin[nom]" class="form-control " value="" required />
+
+                                </div>
+
+                                <div class="col" style="text-align: left;">
+                                    
+                                    <label class="form-label" for="prenom">Prénoms</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+                                    
+                                    <input type="text" id="prenom" name="admin[prenom]" class="form-control " value="" required/>
+
+                                </div>
+
+                        </div>
+
+                        <div class="row mb-4">  
+
+                            <div class="col" style="text-align: left;">
+                                
+                                <label class="form-label" for="phone">Téléphone (pour identification)</label>
+
+                                <div style="margin-bottom: 10px;"></div>
+
+                                <input type="number" id="phone" name="admin[phone]" class="form-control " value="" required minlength="8" maxlength="8"/>
+
+                                
+                                
+                            </div>
+
+                        </div>
+
+                        <div class="row mb-4">
+
+                                <div class="col" style="text-align: left;">
+                                    
+                                    <label class="form-label" for="password">Mot de passe</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <input type="password" id="password" name="admin[password]" class="form-control" value="" required/>
+
+                                </div>
+
+                                <div class="col" style="text-align: left;">
+                                    
+                                    <label class="form-label" for="confirm_password">Confirmer le mot de passe</label>
+
+                                    <div style="margin-bottom: 10px;"></div>
+
+                                    <input type="password" id="confirm_password" name="admin[confirm_password]" class="form-control "  required  />
+
+                                </div>
+
+                        </div>
+
+
+                        <button class="btn btn-info my-4 "  
+                            type="submit">S'inscrire</button>
+
+                    </form>
+                    
+
+                    
+                </div>
+
+                <div class="card-footer text-muted text-center">
+
+                    <p style="color: #1a2649;">Si vous êtes déjà inscrit,  
+                        <a href="<%= customers_login_path %>" style="color: #229ddc;"
+                         class="me-4 ">Cliquez ici</a></p>
+               
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4"></div>
+
+    </div>
+
+</div>
+<% end %>

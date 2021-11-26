@@ -1,0 +1,19 @@
+<% content_for :title do %>
+  Dashboard 
+<% end %>
+
+
+<% content_for :content do %>
+<div class="row mt-24">
+
+    <div class="col-md-3">
+      
+    </div>
+    <div class="col-md-9">
+      <% if flash[:login_success] %>
+        <p class="alert alert-success"> <%= flash[:login_success] %></p>
+      <%end%>
+    </div>
+    
+  </div>
+<% end %>
